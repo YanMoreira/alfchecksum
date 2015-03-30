@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xsi:schemaLocation="http://www.alfresco.org/model/dictionary/1.0 modelSchema.xsd" -->
+<model name="ootb:contentmodel" 
+       xmlns="http://www.alfresco.org/model/dictionary/1.0" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <description>Checksum Content Model</description>
+   <author>OOTB - Sujay Pillai</author>
+   <version>1.0</version>
+
+   <imports>
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+   </imports>
+   
+   <namespaces>
+      <namespace uri="http://orderofthebee.org/model/checksum/1.0" prefix="ootb"/>
+   </namespaces>
+   
+   <aspects>
+   
+      <aspect name="ootb:hashable">
+         <title>Hashable</title>
+         <properties>
+            <property name="ootb:hashType">
+               <title>Hash Type</title>
+               <type>d:text</type>
+			   <default>md5</default>
+			   <constraints>
+			   		<constraint type="LIST">
+			   			<parameter name="allowedValues">
+								<list>
+									<value>md2</value>
+									<value>md5</value>
+									<value>sha-1</value>
+									<value>sha-256</value>
+									<value>sha-384</value>
+									<value>sha-512</value>
+								</list>
+						</parameter>
+			   		</constraint>
+			   </constraints>	
+            </property>
+            <property name="ootb:hashValue">
+					<title>Hash Value</title>
+					<type>d:text</type>		
+			</property>
+         </properties>
+      </aspect>
+      
+   </aspects>
+
+</model>

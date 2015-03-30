@@ -1,0 +1,7 @@
+bin
+build
+.classpath
+.project
+.settings
+chksum-repo/alf_data_dev
+chksum-share/alf_data_dev
